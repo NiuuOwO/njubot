@@ -18,11 +18,11 @@ module.exports.run = async (bot, message, args) => {
   .addField("Kiedy?", message.createdAt)
   .addField("Dlaczego?", bReason);
 
-  let logskbm = message.guild.channels.find(`name`, "logi-kbm");
-  if(!logskbm) return message.reply("Nie mogę znaleźć logów.");
+  let logs = message.guild.channels.find(`name`, "logi");
+  if(!logs) return message.reply("Nie mogę znaleźć logów.");
 
   message.guild.member(bUser).ban(bReason)
-  logskbm.send(banEmbed);
+  logs.send(banEmbed);
   message.channel.send(":ok_hand:");
 
   return;

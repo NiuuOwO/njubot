@@ -15,10 +15,10 @@ module.exports.run = async (bot, message, args) => {
   .addField("Kiedy?", message.createdAt)
   .addField("Ile?", `${args[0]}`);
 
-  let logswiad = message.guild.channels.find(`name`, "logi-wiadomosci");
-  if(!logswiad) return message.reply("Nie mogę znaleźć logów.");
+  let logs = message.guild.channels.find(`name`, "logi");
+  if(!logs) return message.reply("Nie mogę znaleźć logów.");
 
-  logswiad.send(clearembed);
+  logs.send(clearembed);
 }
 
 module.exports.help = {

@@ -6,7 +6,7 @@ module.exports.run = async (bot, message, args) => {
   if (!rolapospacji) return message.reply("Podaj nazwę roli!");
   let rola = message.guild.roles.find(`name`, rolapospacji);
   if (!rola) return message.reply("Nie udało mi się odnaleźć tej roli.");
-  let rlogi = message.guild.channels.find(`name`, "logi-role");
+  let logs = message.guild.channels.find(`name`, "logi");
 
   message.reply("Odblokowano!").then(msg => msg.delete(1000));
   rola.edit({ mentionable: true })
@@ -16,7 +16,7 @@ module.exports.run = async (bot, message, args) => {
   .setColor("#42f49e")
   .addField("**Odblokowano! pingowanie roli**", `${rola}`)
   .addField("Kto?", message.author);
-  rlogi.send(unlockembed);
+  losg.send(unlockembed);
 
   return;
 }

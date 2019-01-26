@@ -29,20 +29,20 @@ module.exports.run = async (bot, message, args) => {
   .addField("Jaka?", rola);
 
 
-  let lrole = message.guild.channels.find(`name`, "logi-role");
-  if(!lrole) return message.reply("Nie mogę znaleźć logów.");
+  let logs = message.guild.channels.find(`name`, "logi");
+  if(!logs) return message.reply("Nie mogę znaleźć logów.");
 
 
   if(osoba.roles.has(rola.id)) {
     osoba.removeRole(rola.id);
-    lrole.send(rolausunembed);
+    logs.send(rolausunembed);
     message.channel.send(`Usunięto ${osoba} rolę.`);
     return;
   }
 
   await (osoba.addRole(rola.id));
   message.channel.send(`Przydzielono ${osoba} rolę.`);
-  lrole.send(rolaaddembed);
+  logs.send(rolaaddembed);
 }
 
 module.exports.help = {

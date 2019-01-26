@@ -75,8 +75,8 @@ module.exports.run = async (bot, message, args) => {
 
     if(args[0] === "admin"){
       if(!message.member.hasPermission("ADMINISTRATOR")) return;
-      message.delete().catch();
       user.send(admmembed);
+      return message.delete().catch();
     }
   }
 }

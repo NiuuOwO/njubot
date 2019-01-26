@@ -33,15 +33,15 @@ Powód: ${powod}`)
   .addField("Na jak długo?", czas)
   .addField("Dlaczego?", powod);
 
-  let kbm = message.guild.channels.find(`name`, "logi-kbm");
-  if(!kbm) return message.reply("Nie mogę znaleźć logów.");
-  kbm.send(muteembed);
+  let logs = message.guild.channels.find(`name`, "logi");
+  if(!logs) return message.reply("Nie mogę znaleźć logów.");
+  logs.send(muteembed);
 
   await(osoba.addRole(rolamute.id));
 
   setTimeout(function(){
     osoba.removeRole(rolamute.id);
-    kbm.send(`<@${osoba.id}> został odciszony!`);
+    logs.send(`<@${osoba.id}> został odciszony!`);
     osoba.send("Zostałeś odciszony!");
   }, ms(czas));
 

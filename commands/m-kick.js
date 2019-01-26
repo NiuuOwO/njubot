@@ -17,11 +17,11 @@ module.exports.run = async (bot, message, args) => {
   .addField("Kiedy?", message.createdAt)
   .addField("Dlaczego?", powod);
 
-  let logskbm = message.guild.channels.find(`name`, "logi-kbm");
-  if(!logskbm) return message.reply("Nie można znaleźć logów.");
+  let logs = message.guild.channels.find(`name`, "logi");
+  if(!logs) return message.reply("Nie można znaleźć logów.");
 
   message.guild.member(kicked).kick(powod);
-  logskbm.send(kickEmbed);
+  logs.send(kickEmbed);
   message.channel.send(`:ok_hand:`);
   kicked.send(`Zostałeś wyrzucony przez ${message.author}. Powód: ${powod}`);
 
