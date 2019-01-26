@@ -4,7 +4,7 @@ const fs = require("fs");
 const token = process.env.token;
 const bot = new Discord.Client({disableEveryone: true});
 bot.commands = new Discord.Collection();
-let  botconfig = require("./botconfig.json");
+let botconfig = require("./botconfig.json");
 let xp = require("./xp.json");
 let purple = botconfig.purple;
 
@@ -95,7 +95,7 @@ bot.on("message", async message => {
 
   let curxp = xp[message.author.id].xp;
   let curlvl = xp[message.author.id].level;
-  let nxtLvl = xp[message.author.id].level * 300;
+  let nxtLvl = xp[message.author.id].level * 500;
   xp[message.author.id].xp = curxp + xpAdd;
   if(nxtLvl <= xp[message.author.id].xp){
     xp[message.author.id].level = curlvl + 1;
