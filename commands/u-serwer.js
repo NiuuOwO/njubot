@@ -14,6 +14,9 @@ module.exports.run = async (bot, message, args) => {
 
     message.channel.send(serverembed);
   }
+  if(message.content == "test"){
+    message.reply("test");
+  }
 }
 
 module.exports.help = {
