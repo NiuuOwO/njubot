@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
-  if(message.channel.id == "539022127643361310", "539022143564939264"){
+  if(message.channel.id == "539022127643361310"){
     let sicon = message.guild.iconURL;
     let serverembed = new Discord.RichEmbed()
     .setDescription("**Informacje o serwerze**")
