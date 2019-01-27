@@ -30,7 +30,7 @@ module.exports.run = async (bot, message, args) => {
       READ_MESSAGES: true,
       SEND_MESSAGES: false
     })
-    everyoneRole.overwritePermissions(weryfik, {
+    weryfik.overwritePermissions(everyoneRole, {
       READ_MESSAGES: false
     })
 }
