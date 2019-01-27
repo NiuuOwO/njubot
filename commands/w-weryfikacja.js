@@ -26,5 +26,5 @@ http://bit.ly/hejoo
 }
 
 module.exports.help = {
-  name: "tak"
+  name: "weryfikacja"
 }
