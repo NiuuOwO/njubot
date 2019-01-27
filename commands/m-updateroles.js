@@ -1,15 +1,15 @@
 const Discord = require('discord.js');
 
 module.exports.run = async (bot, message, args) => {
-  if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("DING DONG! Nie masz uprawnień aby użyć tą komendę. Pozdrawiam ;)");
-  if(message.member.hasPermission("MANAGE_MESSAGES")) { message.reply("Zaktualizowano pomyślnie!"); message.delete(); }
+  const everyoneRole  = message.guild.defaultRole;
 
   let niezwer = message.guild.roles.find(`name`, "niezweryfikowany");
   let weryfik = message.guild.channels.find(`name`, "weryfikacja");
   let sb = message.guild.roles.find(`name`, "Softban");
+  let reg = message.guild.channels.find(`name`, "regulamin-informacje");
 
-  let reg = message.guild.channels.find(`name`, "regulamin");
-
+  if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("DING DONG! Nie masz uprawnień aby użyć tą komendę. Pozdrawiam ;)");
+  if(message.member.hasPermission("MANAGE_MESSAGES")) { message.reply("Zaktualizowano pomyślnie!"); message.delete(); }
 
     message.guild.channels.forEach(async (channel, id) => { //Zmienia uprawnienia niezweryfikowanego na wszystkich kanałach
           await channel.overwritePermissions(niezwer.id, {
@@ -29,6 +29,9 @@ module.exports.run = async (bot, message, args) => {
     reg.overwritePermissions(niezwer.id, {
       READ_MESSAGES: true,
       SEND_MESSAGES: false
+    })
+    everyoneRole.overwritePermissions(weryfik, {
+      READ_MESSAGES: false
     })
 }
 
