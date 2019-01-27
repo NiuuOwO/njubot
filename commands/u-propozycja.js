@@ -1,9 +1,9 @@
 const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
-  if(message.channel.id === "521777821442637844", "513328813128810506"){
+  if(message.channel.id === "539022127643361310", "539022143564939264"){
     let prop = message.guild.channels.find(`name`, "propozycje");
-    let main = message.guild.channels.find(`name`, "main");
+    let main = message.guild.channels.find(`name`, "ogólny");
     if(!args[0]) return message.reply("Nie podano treści!");
 
     let propembed = new Discord.RichEmbed()

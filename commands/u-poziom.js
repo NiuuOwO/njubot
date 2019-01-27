@@ -4,7 +4,7 @@ let purple = botconfig.purple;
 let xp = require("../xp.json");
 
 module.exports.run = async (bot, message, args) => {
-  if(message.channel.id === "521777821442637844", "513328813128810506"){
+  if(message.channel.id === "539022127643361310", "539022143564939264"){
     if(!xp[message.author.id]){
       xp[message.author.id] = {
         xp: 0,

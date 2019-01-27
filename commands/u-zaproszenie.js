@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 
 module.exports.run = async (bot, message, args) => {
-  if(message.channel.id === "521777821442637844", "513328813128810506"){
+  if(message.channel.id === "539022127643361310", "539022143564939264"){
     message.author.send(`czil zołn | strefa czilu
 wbijaj mordo mordunio
 -autorski bot
