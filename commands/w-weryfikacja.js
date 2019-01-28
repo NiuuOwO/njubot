@@ -6,9 +6,8 @@ module.exports.run = async (bot, message, args, member) => {
   let nowinka = message.guild.roles.find(`name`, "Nowinka");
   let wns = message.guild.channels.find(`name`, "witaj-na-serwerze");
   let dsr = message.guild.channels.find(`name`, "dodaj-sobie-role");
-  let ps = message.guild.channels.find(`name`, "przedstaw-sie");
-  let main = message.guild.channels.find(`name`, "main");
-  let reg = message.guild.channels.find(`name`, "regulamin");
+  let main = message.guild.channels.find(`name`, "ogólny");
+  let reg = message.guild.channels.find(`name`, "regulamin-informacje");
   let osoba = message.member;
 
   if(message.channel === weryfik){
@@ -18,7 +17,7 @@ module.exports.run = async (bot, message, args, member) => {
       osoba.addRole(nowinka)
       osoba.removeRole(niezwer);
 
-      wns.send(`Witaj ${osoba}, widzę że przeszedłeś weryfikację, na początek zapoznaj się z ${reg}em, następnie ${dsr}, ${ps} i przywitaj się z nami na ${main} :)
+      wns.send(`Witaj ${osoba}, widzę że przeszedłeś weryfikację, na początek zapoznaj się z ${reg}ami, następnie ${dsr} i przywitaj się z nami na ${main} :)
 http://bit.ly/hejoo
 `);
     }
