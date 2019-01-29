@@ -81,7 +81,7 @@ bot.on("message", async message => {
   let rozpisany = message.guild.roles.find(`name`, "Rozpisany");
   let sgosc = message.guild.roles.find(`name`, "Stały gość");
   let aktywist = message.guild.roles.find(`name`, "Aktywista");
-  let tabelakomendy = ['526707914518298624', '521777821442637844', '513328813128810506'];
+  let tabelakomendy = ['539022127643361310', '539022143564939264'];
   if(tabelakomendy.includes(message.channel.id)) return;
 
   let xpAdd = Math.floor(Math.random() * 3) + 1;
