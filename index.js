@@ -45,6 +45,8 @@ bot.on("guildMemberAdd", function(member){
 
 bot.on("guildMemberRemove", function(member){
   let wns = member.guild.channels.find(`name`, "witaj-na-serwerze");
+  let nowi = member.guild.channels.find(`name`, "nowi");
+  nowi.send(`${member} nas opuścił, jaka szkoda :(`);
   wns.send(`${member} nas opuścił, jaka szkoda :(`);
 });
 
