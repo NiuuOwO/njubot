@@ -79,14 +79,17 @@ bot.on("message", async message => {
 
 bot.on("message", async message => {
   if(message.author.bot) return;
+
   let nowinka = message.guild.roles.find(`name`, "Nowinka");
   let rozpisany = message.guild.roles.find(`name`, "Rozpisany");
   let sgosc = message.guild.roles.find(`name`, "Stały gość");
   let aktywist = message.guild.roles.find(`name`, "Aktywista");
+  let nolife = message.guild.roles.find(`name`, "Nolife");
+
   let tabelakomendy = ['539022127643361310', '539022143564939264'];
   if(tabelakomendy.includes(message.channel.id)) return;
 
-  let xpAdd = Math.floor(Math.random() * 3) + 1;
+  let xpAdd = Math.floor(Math.random() * 50) + 1;
 
   if(!xp[message.author.id]){
     xp[message.author.id] = {
@@ -125,6 +128,11 @@ bot.on("message", async message => {
   if(curlvl == 35){
     message.member.addRole(aktywist);
     message.member.removeRole(sgosc);
+  }
+
+  if(curlvl == 50){
+    message.member.addRole(nolife);
+    message.member.removeRole(aktywist);
   }
 });
 
